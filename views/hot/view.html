@@ -1,0 +1,32 @@
+<h1 class="page-header">正在热映</h1>
+<ul class="list-group">
+  <li class="list-group-item" ng-repeat="item in dataList.subjects">
+		<div class="media">
+			  <div class="media-left media-middle">
+			    <a href="#">
+			      <img class="media-object" src="{{item.images.medium}}" alt="...">
+			    </a>
+			  </div>
+			  <div class="media-body">
+			    <h4>{{item.title}}</h4>
+			    <p>
+			    	类型：
+			    	<strong ng-repeat="genres in item.genres">{{genres}}{{$last?'':'、'}}</strong>
+			    </p>
+			    <p>
+			    	导演：
+			    	<strong ng-repeat="directors in item.directors">{{directors.name}}{{$last?'':'、'}}</strong>
+			    </p>
+			    <p>
+			    	主演：
+			    	<strong ng-repeat="casts in item.casts">{{casts.name}}{{$last?'':'、'}}</strong>
+			    </p>
+			    <p>
+			    	上映时间：
+			    	<strong >{{item.year}}</strong>
+			    </p>
+			  </div>
+		</div>
+  </li>
+
+</ul>
