@@ -1,14 +1,31 @@
-<h1 class="page-header">TOP250</h1>
+<h1 class="page-header">top250</h1>
 <ul class="list-group">
-  <li class="list-group-item">
+  <li class="list-group-item" ng-repeat="item in dataList.subjects">
+  	<span class="badge">{{item.rating.average}}</span>
 		<div class="media">
 			  <div class="media-left media-middle">
 			    <a href="#">
-			      <img class="media-object" src="..." alt="...">
+			      <img class="media-object" src="{{item.images.medium}}" alt="{{item.title}}">
 			    </a>
 			  </div>
 			  <div class="media-body">
-			    <h4 class="media-heading">Middle aligned media</h4>
+			    <h4>{{item.title}}</h4>
+			    <p>
+			    	类型：
+			    	<strong ng-repeat="genres in item.genres">{{genres}}{{$last?'':'、'}}</strong>
+			    </p>
+			    <p>
+			    	导演：
+			    	<strong ng-repeat="directors in item.directors">{{directors.name}}{{$last?'':'、'}}</strong>
+			    </p>
+			    <p>
+			    	主演：
+			    	<strong ng-repeat="casts in item.casts">{{casts.name}}{{$last?'':'、'}}</strong>
+			    </p>
+			    <p>
+			    	上映时间：
+			    	<strong >{{item.year}}</strong>
+			    </p>
 			  </div>
 		</div>
   </li>
