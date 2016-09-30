@@ -9,7 +9,7 @@
     <title></title>
 </head>
 
-<body ng-app="renren">
+<body ng-app="renren" ng-controller="MovieSearchController">
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -28,8 +28,9 @@
                     <li><a href="#">综艺</a></li>
                     <li><a href="#">教学</a></li>
                 </ul>
-                <form class="navbar-form navbar-right">
-                    <input type="text" class="form-control" placeholder="Search...">
+                <form class="navbar-form navbar-right" ng-submit="searchMovie(searchText)">
+                    <input type="text" class="form-control" placeholder="Search..."
+                    ng-model="searchText">
                 </form>
             </div>
         </div>
@@ -71,6 +72,7 @@
     <script type="text/javascript" src="views/future/controller.js"></script>
     <script type="text/javascript" src="views/hot/controller.js"></script>
     <script type="text/javascript" src="views/top/controller.js"></script>
+    <script type="text/javascript" src="views/search/controller.js"></script>
     <!-- end -->
 </body>
 
