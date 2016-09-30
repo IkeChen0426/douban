@@ -5,7 +5,7 @@
 		<div class="media">
 			  <div class="media-left media-middle">
 			    <a href="#">
-			      <img class="media-object" src="{{item.images.medium}}" alt="...">
+			      <img class="media-object" ng-src="{{item.images.medium}}" alt="{{item.title}}">
 			    </a>
 			  </div>
 			  <div class="media-body">
@@ -29,5 +29,13 @@
 			  </div>
 		</div>
   </li>
-
 </ul>
+<p>
+	总共{{dataList.total}}条数据，共{{nowPage}}/{{page}}页
+</p>
+<nav>
+  <ul class="pager">
+    <li class="previous" ng-class="{disabled: nowPage == 1}" ng-click="goPro(nowPage-1)"><a><span aria-hidden="true">&larr;</span> 上一页</a></li>
+    <li class="next" ng-class="{disabled: nowPage == page}" ng-click="goNext(nowPage+1)"><a>下一页 <span aria-hidden="true">&rarr;</span></a></li>
+  </ul>
+</nav>
