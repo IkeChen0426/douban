@@ -1,6 +1,8 @@
 ;(function(angular) {
 	'use strict';
 	var app = angular.module('renren', ['ngRoute']);
+
+
 	app.controller('MovieSearchController', ['$scope', '$location', 'httpService', function($scope, $location, httpService){
 		// 定义jsonp请求的地址
 		var url = "http://api.douban.com/v2/movie/search";

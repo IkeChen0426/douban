@@ -2,7 +2,7 @@
 * @Author: 虚竹
 * @Date:   2016-09-26 22:33:04
 * @Last Modified by:   虚竹
-* @Last Modified time: 2016-09-30 16:08:15
+* @Last Modified time: 2016-10-02 17:16:56
 */
 
 
@@ -16,6 +16,7 @@
 	 	$scope.dataList = {};
 	 	$scope.nowPage = 1;//当前页数
 	 	$scope.page = 1;//总共页数
+	 	$scope.isLoading = true;
 
 
 	 	function getMove(start){
@@ -30,6 +31,7 @@
 		 		i++;
 		 		console.log(i);
 		 		$scope.page = Math.ceil(data.total/pageNum);
+		 		$scope.isLoading = !$scope.isLoading;
 		 		$scope.$apply();//获得数据后要手动更新到页面上
 		 	});	
 	 	}
@@ -37,6 +39,7 @@
 	 	getMove(0);
 	 	$scope.goPro = function(nowPage){
 	 		if (nowPage >= 1) {
+	 			$scope.isLoading = !$scope.isLoading;
 	 			var start = pageNum*(nowPage-1);
 	 			getMove(start);
 	 			$scope.nowPage--;
@@ -45,6 +48,7 @@
 	 	$scope.goNext= function(nowPage){
 	 		console.log("hahaa");//说明进入成功
 	 		if (nowPage <= $scope.page) {
+	 			$scope.isLoading = !$scope.isLoading;
 	 			var start = pageNum*(nowPage-1);
 	 			console.log(nowPage);
 	 			getMove(start);

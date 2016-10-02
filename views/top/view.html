@@ -1,10 +1,10 @@
-<h1 class="page-header">top250</h1>
+<h1 class="page-header">{{dataList.title}}</h1>
 <ul class="list-group">
   <li class="list-group-item" ng-repeat="item in dataList.subjects">
   	<span class="badge">{{item.rating.average}}</span>
 		<div class="media">
 			  <div class="media-left media-middle">
-			    <a href="#">
+			    <a ng-href="#/subject/{{item.id}}">
 			      <img class="media-object" ng-src="{{item.images.medium}}" alt="{{item.title}}">
 			    </a>
 			  </div>
@@ -39,3 +39,8 @@
     <li class="next" ng-class="{disabled: nowPage == page}" ng-click="goNext(nowPage+1)"><a>下一页 <span aria-hidden="true">&rarr;</span></a></li>
   </ul>
 </nav>
+<div class="spinner" ng-show="isLoading">
+  <div class="bounce1"></div>
+  <div class="bounce2"></div>
+  <div class="bounce3"></div>
+</div>

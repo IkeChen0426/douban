@@ -2,7 +2,7 @@
 * @Author: 虚竹
 * @Date:   2016-09-29 12:57:50
 * @Last Modified by:   虚竹
-* @Last Modified time: 2016-09-30 16:44:22
+* @Last Modified time: 2016-10-02 16:30:40
 */
 ;(function(angular){
 'use strict';
@@ -20,8 +20,11 @@
 		}).when('/search/:text', {
 			templateUrl: '../views/search/view.html',
 			controller: 'searchController'
+		}).when('/subject/:id', {
+			templateUrl: '../views/loading/view.html',
+			controller: 'loadingController'
 		}).otherwise({
-			redirectTo: '/hot'
+			redirectTo: '/hot'//直接跳转
 		});
 	}]);
 })(angular);
