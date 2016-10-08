@@ -1,12 +1,13 @@
 /*
-* @Author: 虚竹
+* @Author: 南在南方
 * @Date:   2016-10-02 16:20:00
-* @Last Modified by:   虚竹
-* @Last Modified time: 2016-10-02 17:15:23
+* @Last Modified by:   南在南方
+* @Last Modified time: 2016-10-08 13:01:49
 */
 (function(angular){
 	'use strict';
 	var app = angular.module('renren');
+	
 	app.controller('loadingController', [
 		'$scope', 
 		'$routeParams', 

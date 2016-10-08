@@ -12,7 +12,7 @@
 					document.body.removeChild(script);
 
 				}
-			window['getData'] = getData;
+			window['getData']  = getData;
 			//将data数据转换成字符串
 			var searchData = "?";
 			for(var i in data){
