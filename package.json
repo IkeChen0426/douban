@@ -30,6 +30,8 @@
     "gulp-uncss": "^1.0.0",
     "gulp-usemin": "^0.3.11",
     "opn": "^1.0.0",
+    "require": "^2.4.20",
+    "requirejs": "^2.3.2",
     "run-sequence": "^1.0.2",
     "serve-index": "^1.5.0",
     "serve-static": "^1.7.1",
