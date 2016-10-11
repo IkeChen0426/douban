@@ -2,11 +2,14 @@
 * @Author: 南在南方
 * @Date:   2016-09-30 16:34:51
 * @Last Modified by:   南在南方
-* @Last Modified time: 2016-10-08 13:01:56
+* @Last Modified time: 2016-10-11 13:09:26
 */
-;(function(angular){
+define(['angular', 
+	'angularRoute', 
+	'../../components/service/httpService.js'], function(angular){
+
 	'use strict';
-	var app = angular.module('renren');
+	var app = angular.module('renren.search', ["renren.http"]);
 	app.controller('searchController', [
 		'$scope', 
 		'$routeParams', 
@@ -57,4 +60,5 @@
 		 		}
 		 	}
 	}]);
-})(angular);
+	return app;
+});

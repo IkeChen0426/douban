@@ -2,12 +2,15 @@
 * @Author: 南在南方
 * @Date:   2016-09-26 22:32:33
 * @Last Modified by:   南在南方
-* @Last Modified time: 2016-10-08 13:02:15
+* @Last Modified time: 2016-10-11 13:07:16
 */
 
-;(function(angular) {
+define(['angular', '../../components/service/httpService'], function(angular){
+
 	'use strict';
-	angular.module('renren').controller('hotController', ['$scope', 'httpService', function($scope, httpService) {
+	var app = angular.module('renren.hot', ['renren.http']);
+	console.log("2");
+	app.controller('hotController', ['$scope', 'httpService', function($scope, httpService) {
 	 	var nowPage = 1;
 	 	var pageNum = 8;
 	 	var start = pageNum*(nowPage-1);
@@ -52,4 +55,5 @@
 	 		}
 	 	}
 	}]);
-})(angular);
+	return app;
+});

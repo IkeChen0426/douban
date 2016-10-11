@@ -1,4 +1,4 @@
-;(function(angular) {
+define(["angular",'angularRoute'], function(angular){
 	'use strict';
 	var app = angular.module('renren', ['ngRoute']);
 
@@ -22,4 +22,5 @@
 		// 2.给页面添加一个输入文本model
 		$scope.searchText = '';
 	}]);
-})(angular);
+	return app;
+});
